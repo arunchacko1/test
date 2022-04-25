@@ -78,7 +78,7 @@ trap(struct trapframe *tf)
     lapiceoi();
     break;
 
-  case T_PGFLT:
+  case T_PGFLT: ;
       uint f = rcr2();
       if (f >KERNBASE-1){
           cprintf("from trap access > KERNBASE");
