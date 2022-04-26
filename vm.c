@@ -337,10 +337,10 @@ copyuvm(pde_t *pgdir, uint sz)
       goto bad;
   }
 
-  uint sz = KERNBASE - 1;
-  sz = PGROUNDDOWN(sz);
+  uint f = KERNBASE - 1;
+  f = PGROUNDDOWN(f);
 
-  for(i = sz; i > sz - (curproc->stack_pages) * PGSIZE; i -= PGSIZE){
+  for(i = f; i > f - (curproc->stack_pages) * PGSIZE; i -= PGSIZE){
       if((pte = walkpgdir(pgdir, (void *) i, 0)) == 0)
         panic("copyuvm: pte should exist");
       if(!(*pte & PTE_P))
