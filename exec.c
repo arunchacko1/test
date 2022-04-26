@@ -69,7 +69,6 @@ exec(char *path, char **argv)
     goto bad;
 
   curproc->stack_pages = 1;
-  cprintf("Initial number of pages by the process: %d\n", curproc->stack_pages);
 
 
   // Push argument strings, prepare rest of stack in ustack.
