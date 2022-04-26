@@ -90,7 +90,7 @@ trap(struct trapframe *tf)
           exit();
       }
       myproc()->stack_pages++;
-          cprintf("Increased stack size");
+      cprintf("Increased stack size");
       //cprintf("case T_PGFLT from trap.c: allocuvm succeeded. Number of pages allocated: %d\n", myproc()->stack_pages);
       break;
 
